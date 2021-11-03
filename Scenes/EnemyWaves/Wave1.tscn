@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scenes/GameObjects/Enemy2.tscn" type="PackedScene" id=2]
+
+[node name="Enemies" type="Node"]
+
+[node name="Enemy17" parent="." instance=ExtResource( 2 )]
+position = Vector2( 256, 192 )
+wave_amount_range = [ 20, 25 ]
+
+[node name="Enemy20" parent="." instance=ExtResource( 2 )]
+position = Vector2( 768, 192 )
+wave_amount_range = [ 20, 25 ]

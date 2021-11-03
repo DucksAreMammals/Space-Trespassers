@@ -1,0 +1,169 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Fonts/MainframeSpore.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Fonts/BebasNeue-Regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Scripts/UI/MainMenu.gd" type="Script" id=3]
+[ext_resource path="res://Styles/ButtonNormal.tres" type="StyleBox" id=4]
+[ext_resource path="res://Styles/ButtonHover.tres" type="StyleBox" id=5]
+[ext_resource path="res://Styles/ButtonDisabled.tres" type="StyleBox" id=6]
+[ext_resource path="res://Styles/ButtonPressed.tres" type="StyleBox" id=7]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+font_data = ExtResource( 2 )
+
+[node name="MainMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+margin_right = 1024.0
+margin_bottom = 72.0
+custom_fonts/font = ExtResource( 1 )
+text = "Space Trespassers"
+align = 1
+
+[node name="Spacer" type="Control" parent="VBoxContainer"]
+margin_top = 76.0
+margin_right = 1024.0
+margin_bottom = 218.0
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 222.0
+margin_right = 1024.0
+margin_bottom = 263.0
+
+[node name="Spacer" type="Control" parent="VBoxContainer/HBoxContainer"]
+margin_right = 117.0
+margin_bottom = 41.0
+size_flags_horizontal = 3
+
+[node name="PlayButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+margin_left = 121.0
+margin_right = 298.0
+margin_bottom = 41.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.5
+custom_styles/hover = ExtResource( 5 )
+custom_styles/pressed = ExtResource( 7 )
+custom_styles/disabled = ExtResource( 6 )
+custom_styles/normal = ExtResource( 4 )
+custom_fonts/font = SubResource( 1 )
+text = "Play"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Spacer2" type="Control" parent="VBoxContainer/HBoxContainer"]
+margin_left = 302.0
+margin_right = 419.0
+margin_bottom = 41.0
+size_flags_horizontal = 3
+
+[node name="PlayButton2" type="Button" parent="VBoxContainer/HBoxContainer"]
+margin_left = 423.0
+margin_right = 600.0
+margin_bottom = 41.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.5
+custom_styles/hover = ExtResource( 5 )
+custom_styles/pressed = ExtResource( 7 )
+custom_styles/disabled = ExtResource( 6 )
+custom_styles/normal = ExtResource( 4 )
+custom_fonts/font = SubResource( 1 )
+text = "Level Select"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Spacer4" type="Control" parent="VBoxContainer/HBoxContainer"]
+margin_left = 604.0
+margin_right = 721.0
+margin_bottom = 41.0
+size_flags_horizontal = 3
+
+[node name="SettingsButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+margin_left = 725.0
+margin_right = 902.0
+margin_bottom = 41.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.5
+custom_styles/hover = ExtResource( 5 )
+custom_styles/pressed = ExtResource( 7 )
+custom_styles/disabled = ExtResource( 6 )
+custom_styles/normal = ExtResource( 4 )
+custom_fonts/font = SubResource( 1 )
+text = "Settings"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Spacer3" type="Control" parent="VBoxContainer/HBoxContainer"]
+margin_left = 906.0
+margin_right = 1024.0
+margin_bottom = 41.0
+size_flags_horizontal = 3
+
+[node name="Spacer2" type="Control" parent="VBoxContainer"]
+margin_top = 267.0
+margin_right = 1024.0
+margin_bottom = 409.0
+size_flags_vertical = 3
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 413.0
+margin_right = 1024.0
+margin_bottom = 454.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Spacer4" type="Control" parent="VBoxContainer/HBoxContainer2"]
+margin_right = 362.0
+margin_bottom = 41.0
+size_flags_horizontal = 3
+
+[node name="QuitButton" type="Button" parent="VBoxContainer/HBoxContainer2"]
+margin_left = 366.0
+margin_right = 657.0
+margin_bottom = 41.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.8
+custom_styles/hover = ExtResource( 5 )
+custom_styles/pressed = ExtResource( 7 )
+custom_styles/disabled = ExtResource( 6 )
+custom_styles/normal = ExtResource( 4 )
+custom_fonts/font = SubResource( 1 )
+text = "Quit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Spacer5" type="Control" parent="VBoxContainer/HBoxContainer2"]
+margin_left = 661.0
+margin_right = 1024.0
+margin_bottom = 41.0
+size_flags_horizontal = 3
+
+[node name="Spacer3" type="Control" parent="VBoxContainer"]
+margin_top = 458.0
+margin_right = 1024.0
+margin_bottom = 600.0
+size_flags_vertical = 3
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/PlayButton" to="." method="_on_PlayButton_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/PlayButton2" to="." method="_on_PlayButton2_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/SettingsButton" to="." method="_on_SettingsButton_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/QuitButton" to="." method="_on_QuitButton_pressed"]

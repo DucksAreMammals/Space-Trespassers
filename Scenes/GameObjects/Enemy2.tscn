@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Sprites/Enemy3.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/Gameplay/Enemy.gd" type="Script" id=2]
+
+[node name="Enemy" type="Sprite"]
+scale = Vector2( 0.25, 0.25 )
+z_index = 5
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
+bullet_speed = 500
+time_between_bullets = [ 3.0, 5.0 ]
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 4
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PoolVector2Array( 32.6627, 176.674, 95.7461, -76.2763, -95.4697, -76.9437, -33.0782, 176.174 )
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]

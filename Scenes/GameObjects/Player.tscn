@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Sprites/Player.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/Gameplay/Player.gd" type="Script" id=2]
+
+[node name="Player" type="Sprite"]
+position = Vector2( 512, 550 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
+bullet_speed = 750
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PoolVector2Array( -125.711, 73.908, 126.5, 75, -0.338135, -176.006 )
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]

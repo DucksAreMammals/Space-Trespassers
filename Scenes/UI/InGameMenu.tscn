@@ -1,0 +1,189 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Fonts/MainframeSpore.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Fonts/BebasNeue.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Sprites/Menu.png" type="Texture" id=3]
+[ext_resource path="res://Scripts/UI/Menu.gd" type="Script" id=4]
+[ext_resource path="res://Audio/select.wav" type="AudioStream" id=5]
+[ext_resource path="res://Styles/ButtonNormal.tres" type="StyleBox" id=6]
+[ext_resource path="res://Styles/ButtonHover.tres" type="StyleBox" id=7]
+[ext_resource path="res://Styles/ButtonDisabled.tres" type="StyleBox" id=8]
+[ext_resource path="res://Styles/ButtonPressed.tres" type="StyleBox" id=9]
+
+[node name="Menu" type="Node2D"]
+pause_mode = 2
+z_index = 20
+script = ExtResource( 4 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_left = 112.0
+margin_top = 25.0
+margin_right = 912.0
+margin_bottom = 575.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="VBoxContainer"]
+position = Vector2( 400, 275 )
+scale = Vector2( 0.45, 0.45 )
+texture = ExtResource( 3 )
+
+[node name="Spacer" type="Control" parent="VBoxContainer"]
+margin_right = 800.0
+margin_bottom = 1.0
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.01
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="VBoxContainer"]
+margin_top = 5.0
+margin_right = 800.0
+margin_bottom = 77.0
+custom_fonts/font = ExtResource( 1 )
+text = "Menu"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Spacer2" type="Control" parent="VBoxContainer"]
+margin_top = 81.0
+margin_right = 800.0
+margin_bottom = 204.0
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 208.0
+margin_right = 800.0
+margin_bottom = 249.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Spacer5" type="Control" parent="VBoxContainer/HBoxContainer"]
+margin_right = 156.0
+margin_bottom = 41.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ResumeButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+margin_left = 160.0
+margin_right = 317.0
+margin_bottom = 41.0
+size_flags_horizontal = 3
+custom_styles/hover = ExtResource( 7 )
+custom_styles/pressed = ExtResource( 9 )
+custom_styles/disabled = ExtResource( 8 )
+custom_styles/normal = ExtResource( 6 )
+custom_fonts/font = ExtResource( 2 )
+text = "Resume"
+
+[node name="Spacer2" type="Control" parent="VBoxContainer/HBoxContainer"]
+margin_left = 321.0
+margin_right = 478.0
+margin_bottom = 41.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="RestartButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+margin_left = 482.0
+margin_right = 639.0
+margin_bottom = 41.0
+size_flags_horizontal = 3
+custom_styles/hover = ExtResource( 7 )
+custom_styles/pressed = ExtResource( 9 )
+custom_styles/disabled = ExtResource( 8 )
+custom_styles/normal = ExtResource( 6 )
+custom_fonts/font = ExtResource( 2 )
+text = "Next Level"
+
+[node name="Spacer3" type="Control" parent="VBoxContainer/HBoxContainer"]
+margin_left = 643.0
+margin_right = 800.0
+margin_bottom = 41.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Spacer4" type="Control" parent="VBoxContainer"]
+margin_top = 253.0
+margin_right = 800.0
+margin_bottom = 377.0
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 381.0
+margin_right = 800.0
+margin_bottom = 422.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Spacer5" type="Control" parent="VBoxContainer/HBoxContainer2"]
+margin_right = 156.0
+margin_bottom = 41.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="LevelSelectButton" type="Button" parent="VBoxContainer/HBoxContainer2"]
+margin_left = 160.0
+margin_right = 317.0
+margin_bottom = 41.0
+size_flags_horizontal = 3
+custom_styles/hover = ExtResource( 7 )
+custom_styles/pressed = ExtResource( 9 )
+custom_styles/disabled = ExtResource( 8 )
+custom_styles/normal = ExtResource( 6 )
+custom_fonts/font = ExtResource( 2 )
+text = "Level Select"
+
+[node name="Spacer2" type="Control" parent="VBoxContainer/HBoxContainer2"]
+margin_left = 321.0
+margin_right = 478.0
+margin_bottom = 41.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MenuButton" type="Button" parent="VBoxContainer/HBoxContainer2"]
+margin_left = 482.0
+margin_right = 639.0
+margin_bottom = 41.0
+size_flags_horizontal = 3
+custom_styles/hover = ExtResource( 7 )
+custom_styles/pressed = ExtResource( 9 )
+custom_styles/disabled = ExtResource( 8 )
+custom_styles/normal = ExtResource( 6 )
+custom_fonts/font = ExtResource( 2 )
+text = "Menu"
+
+[node name="Spacer3" type="Control" parent="VBoxContainer/HBoxContainer2"]
+margin_left = 643.0
+margin_right = 800.0
+margin_bottom = 41.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Spacer3" type="Control" parent="VBoxContainer"]
+margin_top = 426.0
+margin_right = 800.0
+margin_bottom = 550.0
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SelectSoundPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/ResumeButton" to="." method="_on_ResumeButton_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/RestartButton" to="." method="_on_RestartButton_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/LevelSelectButton" to="." method="_on_LevelSelectButton_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/MenuButton" to="." method="_on_MenuButton_pressed"]

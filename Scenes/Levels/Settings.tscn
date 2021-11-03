@@ -1,0 +1,230 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Fonts/MainframeSpore.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Fonts/BebasNeue.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Scripts/UI/Settings.gd" type="Script" id=3]
+[ext_resource path="res://Audio/select.wav" type="AudioStream" id=4]
+[ext_resource path="res://Styles/ButtonNormal.tres" type="StyleBox" id=5]
+[ext_resource path="res://Styles/ButtonHover.tres" type="StyleBox" id=6]
+[ext_resource path="res://Styles/ButtonDisabled.tres" type="StyleBox" id=7]
+[ext_resource path="res://Styles/ButtonPressed.tres" type="StyleBox" id=8]
+
+[node name="SettingsMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_top = 0.840912
+margin_right = 1024.0
+margin_bottom = 600.841
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="VBoxContainer"]
+margin_right = 1024.0
+margin_bottom = 72.0
+custom_fonts/font = ExtResource( 1 )
+text = "Settings"
+align = 1
+
+[node name="Spacer2" type="Control" parent="VBoxContainer"]
+margin_top = 76.0
+margin_right = 1024.0
+margin_bottom = 100.0
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.25
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 104.0
+margin_right = 1024.0
+margin_bottom = 353.0
+
+[node name="Spacer2" type="Control" parent="VBoxContainer/HBoxContainer"]
+margin_right = 43.0
+margin_bottom = 249.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+
+[node name="SettingsBox" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+margin_left = 47.0
+margin_right = 267.0
+margin_bottom = 249.0
+size_flags_horizontal = 3
+
+[node name="MusicSettingBox" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/SettingsBox"]
+visible = false
+margin_right = 220.0
+margin_bottom = 40.0
+
+[node name="MusicSettingLabel" type="Label" parent="VBoxContainer/HBoxContainer/SettingsBox/MusicSettingBox"]
+margin_right = 60.0
+margin_bottom = 39.0
+custom_fonts/font = ExtResource( 2 )
+text = "Music"
+
+[node name="Spacer" type="Control" parent="VBoxContainer/HBoxContainer/SettingsBox/MusicSettingBox"]
+margin_left = 64.0
+margin_right = 140.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+
+[node name="MusicSetting" type="CheckButton" parent="VBoxContainer/HBoxContainer/SettingsBox/MusicSettingBox"]
+margin_left = 144.0
+margin_right = 220.0
+margin_bottom = 40.0
+pressed = true
+
+[node name="SFXSettingBox" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/SettingsBox"]
+margin_right = 220.0
+margin_bottom = 40.0
+
+[node name="SFXSettingLabel" type="Label" parent="VBoxContainer/HBoxContainer/SettingsBox/SFXSettingBox"]
+margin_right = 36.0
+margin_bottom = 39.0
+custom_fonts/font = ExtResource( 2 )
+text = "SFX"
+
+[node name="Spacer" type="Control" parent="VBoxContainer/HBoxContainer/SettingsBox/SFXSettingBox"]
+margin_left = 40.0
+margin_right = 140.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SFXSetting" type="CheckButton" parent="VBoxContainer/HBoxContainer/SettingsBox/SFXSettingBox"]
+margin_left = 144.0
+margin_right = 220.0
+margin_bottom = 40.0
+pressed = true
+
+[node name="Spacer4" type="Control" parent="VBoxContainer/HBoxContainer/SettingsBox"]
+margin_top = 44.0
+margin_right = 220.0
+margin_bottom = 204.0
+rect_pivot_offset = Vector2( -265, 91.1591 )
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ResetProgressButton" type="Button" parent="VBoxContainer/HBoxContainer/SettingsBox"]
+margin_top = 208.0
+margin_right = 220.0
+margin_bottom = 249.0
+custom_styles/hover = ExtResource( 6 )
+custom_styles/pressed = ExtResource( 8 )
+custom_styles/disabled = ExtResource( 7 )
+custom_styles/normal = ExtResource( 5 )
+custom_fonts/font = ExtResource( 2 )
+text = "Reset Progress"
+
+[node name="Spacer" type="Control" parent="VBoxContainer/HBoxContainer"]
+margin_left = 271.0
+margin_right = 491.0
+margin_bottom = 249.0
+size_flags_horizontal = 3
+
+[node name="AttributeBox" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+margin_left = 495.0
+margin_right = 975.0
+margin_bottom = 249.0
+
+[node name="Attribution" type="Label" parent="VBoxContainer/HBoxContainer/AttributeBox"]
+margin_right = 480.0
+margin_bottom = 249.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 2 )
+text = "Attribution:
+Bebas Neue Font by Dahrma Font on DaFont
+Mainframe Font by Disaster Fonts on DaFont
+
+Sound Design:
+By Me Using sfxr.me"
+align = 1
+
+[node name="Spacer3" type="Control" parent="VBoxContainer/HBoxContainer"]
+margin_left = 979.0
+margin_right = 1024.0
+margin_bottom = 249.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+
+[node name="Spacer3" type="Control" parent="VBoxContainer"]
+margin_top = 357.0
+margin_right = 1024.0
+margin_bottom = 454.0
+rect_pivot_offset = Vector2( -265, 91.1591 )
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 458.0
+margin_right = 1024.0
+margin_bottom = 499.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Spacer" type="Control" parent="VBoxContainer/HBoxContainer2"]
+margin_right = 338.0
+margin_bottom = 41.0
+rect_pivot_offset = Vector2( -265, 91.1591 )
+size_flags_horizontal = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MenuButton" type="Button" parent="VBoxContainer/HBoxContainer2"]
+margin_left = 342.0
+margin_right = 681.0
+margin_bottom = 41.0
+size_flags_horizontal = 3
+custom_styles/hover = ExtResource( 6 )
+custom_styles/pressed = ExtResource( 8 )
+custom_styles/disabled = ExtResource( 7 )
+custom_styles/normal = ExtResource( 5 )
+custom_fonts/font = ExtResource( 2 )
+text = "Menu"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Spacer2" type="Control" parent="VBoxContainer/HBoxContainer2"]
+margin_left = 685.0
+margin_right = 1024.0
+margin_bottom = 41.0
+rect_pivot_offset = Vector2( -265, 91.1591 )
+size_flags_horizontal = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Spacer" type="Control" parent="VBoxContainer"]
+margin_top = 503.0
+margin_right = 1024.0
+margin_bottom = 600.0
+rect_pivot_offset = Vector2( -265, 91.1591 )
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SelectSoundPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+
+[connection signal="toggled" from="VBoxContainer/HBoxContainer/SettingsBox/MusicSettingBox/MusicSetting" to="." method="_on_setting_toggled"]
+[connection signal="toggled" from="VBoxContainer/HBoxContainer/SettingsBox/SFXSettingBox/SFXSetting" to="." method="_on_setting_toggled"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/SettingsBox/ResetProgressButton" to="." method="_on_ResetProgressButton_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/MenuButton" to="." method="_on_MenuButton_pressed"]
